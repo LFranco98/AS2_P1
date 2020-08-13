@@ -1,6 +1,8 @@
 package com.PIAnalisis2.Model;
 
 public interface IEstudiantes {
+    public String getId_estudiante();
+    public void setId_estudiante(String id_estudiante);
     public String getName();
     public void setName(String name);
     public String getSurname();
