@@ -1,6 +1,7 @@
 package com.PIAnalisis2.Model;
 
 public class Estudiantes implements IEstudiantes{
+    private String id_estudiante;
     private String name;
     private String surname;
     private String email;
@@ -10,6 +11,17 @@ public class Estudiantes implements IEstudiantes{
     private String phone2;
     private String address1;
     private String address2;
+
+    @Override
+    public String getId_estudiante() {
+        return id_estudiante;
+    }
+
+    @Override
+    public void setId_estudiante(String id_estudiante) {
+        this.id_estudiante = id_estudiante;
+    }
+    
     
     @Override
     public String getName() {

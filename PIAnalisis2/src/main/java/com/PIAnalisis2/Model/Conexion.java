@@ -16,7 +16,7 @@ public class Conexion {
     
    
     
-    private Conexion() {
+    Conexion() {
     }
 
     public static Conexion getInstance(){
@@ -31,7 +31,7 @@ public class Conexion {
             Class.forName(jdbc);
             conexion = DriverManager.getConnection(urlConexion, usuario, contra);
         } catch(ClassNotFoundException | SQLException ex){
-            
+            System.out.println("Conexion fallida");
         }
     }
     
