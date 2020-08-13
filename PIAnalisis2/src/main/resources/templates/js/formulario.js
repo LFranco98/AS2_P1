@@ -9,7 +9,7 @@ const expresiones = {
 	telefono1: /^[0-9_.+-]/, // 7 a 14 numeros.
 	telefono2: /^[0-9_.+-]/, // 7 a 14 numeros.
 	direccion: /^[a-zA-Z0-9_.+-]/,
-	direccion2: /^[a-zA-Z0-9_.+-]/,
+	direccion2: /^[a-zA-Z0-9_.+-]/
 }
 
 const campos = {
@@ -26,24 +26,29 @@ const campos = {
 
 const validarFormulario = (e) => {
 	switch (e.target.name) {
-		case "usuario":
-			validarCampo(expresiones.usuario, e.target, 'usuario');
-		break;
 		case "nombre":
 			validarCampo(expresiones.nombre, e.target, 'nombre');
 		break;
-		case "password":
-			validarCampo(expresiones.password, e.target, 'password');
-			validarPassword2();
-		break;
-		case "password2":
-			validarPassword2();
+		case "apellido":
+			validarCampo(expresiones.apellido, e.target, 'apellido');
 		break;
 		case "correo":
 			validarCampo(expresiones.correo, e.target, 'correo');
 		break;
-		case "telefono":
-			validarCampo(expresiones.telefono, e.target, 'telefono');
+		case "birthday":
+			validarCampo(expresiones.birthday, e.target, 'birthday');
+		break;
+		case "telefono1":
+			validarCampo(expresiones.telefono1, e.target, 'telefono1');
+		break;
+		case "telefono2":
+			validarCampo(expresiones.telefono2, e.target, 'telefono2');
+		break;
+		case "direccion1":
+			validarCampo(expresiones.direccion1, e.target, 'direccion1');
+		break;
+		case "direccion2":
+			validarCampo(expresiones.direccion2, e.target, 'direccion2');
 		break;
 	}
 }
