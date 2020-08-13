@@ -11,10 +11,10 @@
   </head>
   <body>
     <div>
-      <form action="#" method="post" th:action="@{/asignar_estudiante}" th:object="${asignar_estudent}">
+      <form action="#" method="post" th:action="@{/desasignar_estudiante}" th:object="${desasignar_estudent}">
           <input type="text" value="" th:field="*{id_student}" placeholder="ID Estudiante">
           <input type="text" value="" th:field="*{id_course}" placeholder="ID Curso">
-          <button type="submit" class="btn btn-primary" id="btn-asignar" name="btn-asignar">Asignar</button>
+          <button type="submit" class="btn btn-primary" id="btn-desasignar" name="btn-desasignar">Desasignar</button>
       </form>
     </div>
     <div>
