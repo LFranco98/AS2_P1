@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    
+    background-color:darkgray;
+}
+
+main{
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+}
+/*                   Estilo boton 1                               */
+.btn-style1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn1 {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background-color: dodgerblue;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .12 ease all;
+}
+
+.btn1:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+/*                   Estilo boton 2                               */
+.btn-style2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.btn2 {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background-color: darkslategray;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .12 ease all;
+}
+
+.btn2:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+
+/*                   Estilo boton 3                               */
+.btn-style3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.btn3 {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background-color: darkcyan;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .12 ease all;
+}
+
+.btn3:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+
+/*                   Estilo boton 4                               */
+.btn-style4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.btn4 {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background-color: midnightblue;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .12 ease all;
+}
+
+.btn4:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
+
+/*                   Estilo boton 5                               */
+.btn-style5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.btn5 {
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background-color: steelblue;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .12 ease all;
+}
+
+.btn5:hover{
+    box-shadow: 3px 0px 30px rgba(163,163,163, 1);
+}
+
