@@ -1,8 +1,10 @@
 package com.PIAnalisis2.Model;
 
+import java.io.PrintWriter;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +16,11 @@ public class EstudiantesDAO implements IEstudianteDAO{
     public List<Estudiantes> GetEstudiantes(){ 
         List<Estudiantes> estudiantes = new ArrayList<Estudiantes>();
         Estudiantes estudiante = new Estudiantes();
-        PreparedStatement stmt = null;
         
         try{
             conectar.abrirConexion();
-            stmt = conectar.getConexion().prepareStatement("select * from t2_student");
-            ResultSet rs = stmt.executeQuery();
+            Statement stmt = conectar.getConexion().createStatement();
+            ResultSet rs = stmt.executeQuery("select * from t2_student");
             
             while(rs.next()){
                 estudiante.setId_estudiante(rs.getString("id_student"));
@@ -66,6 +67,46 @@ public class EstudiantesDAO implements IEstudianteDAO{
             PreparedStatement statement = conectar.getConexion().prepareStatement("delete from t2_student_rel_course where id_student = ? AND id_course = ?;");
             statement.setString(1, id_estudiante);
             statement.setString(2, id_curso);
+            conectar.cerrarConexion();
+        }catch(SQLException sqle){
+            sqle.printStackTrace();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void ExportarEstudiante(String id_estudiante, String id_curso) {
+        try{
+            conectar.abrirConexion();
+            PreparedStatement statement = conectar.getConexion().prepareStatement("select s.name sname, s.surname, c.name cname from t2_student s, t2_course c, t2_student_rel_course z\n" +
+                                                                                    "where s.id_student = z.id_student AND c.id_course = c.id_course AND c.id_course = ?;");
+            statement.setString(1, id_curso);
+            ResultSet rs = statement.executeQuery();
+            PrintWriter archivo = new PrintWriter("Estudiantes.csv", "URF-8");
+            while(rs.next()){
+                archivo.println("\""+rs.getString("sname")+"\",\""+rs.getString("surname")+"\",\""+rs.getString("cname")+"\"");
+            }
+            conectar.cerrarConexion();
+        }catch(SQLException sqle){
+            sqle.printStackTrace();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void ExportarCursos(String id_estudiante, String id_curso) {
+        try{
+            conectar.abrirConexion();
+            PreparedStatement statement = conectar.getConexion().prepareStatement("select s.name sname, s.surname, c.name cname from t2_student s, t2_course c, t2_student_rel_course z\n" +
+                                                                                    "where s.id_student = z.id_student AND c.id_course = c.id_course AND s.id_student = ?;");
+            statement.setString(1, id_estudiante);
+            ResultSet rs = statement.executeQuery();
+            PrintWriter archivo = new PrintWriter("Estudiantes.csv", "URF-8");
+            while(rs.next()){
+                archivo.println("\""+rs.getString("sname")+"\",\""+rs.getString("surname")+"\",\""+rs.getString("cname")+"\"");
+            }
             conectar.cerrarConexion();
         }catch(SQLException sqle){
             sqle.printStackTrace();

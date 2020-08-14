@@ -40,6 +40,28 @@ public class IndexController {
         return "desasignar";
     }
     
+    @RequestMapping("/exportar_estudiantes_curso")
+    public String ViewExportar_estudiantes_curso(Model model){
+        model.addAttribute("exportar_estudiantes", new Asignaciones());
+        try{
+            model.addAttribute("estudiante", estdao.GetEstudiantes());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return "exportar_csv_estudiantes";
+    }
+    
+    @RequestMapping("/exportar_cursos_estudiante")
+    public String ViewExportar_cursos_estudiante(Model model){
+        model.addAttribute("exportar_cursos", new Asignaciones());
+        try{
+            model.addAttribute("estudiante", estdao.GetEstudiantes());
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return "exportar_csv_cursos";
+    }
+    
     @GetMapping("/error")
     public String error(Model model){
         

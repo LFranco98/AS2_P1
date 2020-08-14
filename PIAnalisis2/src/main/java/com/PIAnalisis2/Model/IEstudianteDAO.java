@@ -12,4 +12,6 @@ public interface IEstudianteDAO {
     public List<Estudiantes> GetEstudiantes();
     public void InsertAsign(String id_estudiante, String id_curso);
     public void DeleteAsign(String id_estudiante, String id_curso);
+    public void ExportarEstudiante(String id_estudiante, String id_curso);
+    public void ExportarCursos(String id_estudiante, String id_curso);
 }
