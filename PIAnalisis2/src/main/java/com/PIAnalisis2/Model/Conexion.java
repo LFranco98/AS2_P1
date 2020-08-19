@@ -48,8 +48,5 @@ public class Conexion implements IConexion{
         } 
         
     }
-    /**
-     * Default constructor
-     */
     
 }
