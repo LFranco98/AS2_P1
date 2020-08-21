@@ -14,7 +14,7 @@ public class EstudiantesDAO implements IEstudianteDAO{
     
     @Override
     public List<Estudiantes> GetEstudiantes(){ 
-        List<Estudiantes> estudiantes = new ArrayList<Estudiantes>();
+        List<Estudiantes> estudiantes = new ArrayList<>();
         Estudiantes estudiante = new Estudiantes();
         
         try{

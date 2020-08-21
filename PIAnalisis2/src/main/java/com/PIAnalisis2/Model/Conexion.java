@@ -13,10 +13,12 @@ public class Conexion implements IConexion{
     Conexion() {
     }
     
+    @Override
     public Connection getConexion() {
         return conexion;
     }
 
+    @Override
     public void setConexion(Connection conexion) {
         this.conexion = conexion;
     }
@@ -43,7 +45,7 @@ public class Conexion implements IConexion{
     public void cerrarConexion(){
        try{
             getConexion().close();
-        } catch(Exception ex){
+        } catch(SQLException ex){
              JOptionPane.showMessageDialog(null, ex.getMessage(), "Error en conexion",JOptionPane.ERROR_MESSAGE);
         } 
         
